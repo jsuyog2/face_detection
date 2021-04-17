@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="html">
+
+<head>
+    <title>Face Recognition</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="preloader-wrapper big active process">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li class="logo">
+            <a id="logo-container" href="/" class="brand-logo">
+                <object id="front-page-logo" type="image/svg+xml" data="images/logo.svg">Your browser does not support
+                    SVG</object>
+            </a>
+        </li>
+        <li class="active"><a class="waves-effect" href="/">Face Recognition</a></li>
+        <li><a class="waves-effect" href="/add_face.html">ADD New Face</a></li>
+        <li><a class="waves-effect" href="/model.html">Model</a></li>
+    </ul>
+    <header>
+        <nav class="top-nav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col s12 m10 offset-m1">
+                            <h1 class="header">Face Recognition</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container main">
+        <div class="row">
+            <blockquote>Upload best quality image for better result</blockquote>
+            <div class="col s12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Upload Image</span>
+                        <input type="file" id="queryImgUploadInput" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <p><strong>Output Image:</strong></p>
+            <div class="col s7 faceContainer">
+                <img id="queryImg" class="queryimg" alt="Face Recognition" />
+                <canvas id="queryImgOverlay" class="queryimg"></canvas>
+            </div>
+            <div class="col s4 offset-s1 listContainer">
+                <div class="row">
+                    <h4 class="totalNO">Total Faces: None</h4>
+                </div>
+                <div class="row" id="collectionDIV">
+                    <p><strong>List of faces in images:</strong></p>
+                    <div class="collection"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modelContainer">
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script/face-api.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/bbt.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

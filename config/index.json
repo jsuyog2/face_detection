@@ -1,0 +1,5 @@
+{
+    "db": "postgres://postgres:1234@localhost/facerecognition",
+    "cache": 3600,
+    "port": 8000
+}
